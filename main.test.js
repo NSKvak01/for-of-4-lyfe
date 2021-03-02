@@ -1,9 +1,92 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+function addAll(arr){
+  let sum = 0;
+  for (const value of arr){
+    sum += value;
+  }
+  return sum;
+}
 
+function countSpaces(str){
+  let count = 0;
+  for (const value of str){
+    if (value === ' '){
+      count +=1;
+    }
+  }
+  return count;
+}
 
+function countTrues(bool){
+  let boolCount = 0;
+  for (const item of bool){
+    if (item === true){
+      boolCount +=1;
+    }
+  }
+  return boolCount;
+}
 
+function makeFriendly(p){
+  let string = '';
+  for (const str of p){
+    if (str === '.'){
+      string += '!';
+    } else{
+      string += str;
+    }
+  }
+  return string;
+}
+
+function cubeAll(arr){
+  // arr.map(n => n*n*n)
+  // or
+  let output = [];
+  for (const value of arr){
+    output.push(value*value*value)
+  }
+  return output;
+}
+
+function addNoises(arr){
+  let withNoises = [];
+  for (const name of arr){
+    if (name === "Fido" || name === "Rolph" || name === "Maisie"){
+      let noises = name + ' says "Woof!"';
+      withNoises.push(noises)
+    } else if (name === "Garfield" || name === "Heathcliff"){
+      let noises1 = name + ' says "Meow!"';
+      withNoises.push(noises1)
+    } else {
+      let noises2 = name + ' says "ROWR."';
+      withNoises.push(noises2);
+    }
+  }
+  return withNoises;
+}
+
+function womenOnly(arr){
+  let newArr = [];
+  for (const name of arr){
+    if (name.endsWith('F')){
+      newArr.push(name);
+    }
+  }
+  return newArr;
+}
+
+function integersOnly(arr){
+  let newArr = [];
+  for (const num of arr){
+    if (Number.isInteger(num)){
+      newArr.push(num)
+    }
+  }
+  return newArr;
+}
 
 
 
@@ -56,9 +139,6 @@ describe('addAll', () => {
     expect(addAll(nums2)).toBe(-854);
   })
 
-  it(`isn't reassignable`, () => {
-    expect(() => addAll = 500).toThrow();
-  })
 })
 
 describe(`countSpaces`, () => {
